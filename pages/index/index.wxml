@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+  <input type="text" placeholder="请输入待办事项" bindconfirm="additem" value="{{newItem}}"/>
+  <h1>正在进行的事件</h1>
+  <ul class="ul1">
+    <li bindtap="fn" data-index="{{index}}" wx:if="{{!item.wan}}" wx:for="{{todoList}}" wx:for-item="item" wx:key="{{item}}"><span></span>{{item.name}}</li>
+  </ul>
+  <h1>已完成的事件</h1>
+  <ul class="ul2">
+    <li bindtap="fn" data-index="{{index}}" wx:if="{{item.wan}}" wx:for="{{todoList}}" wx:for-item="item" wx:key="{{item}}"><span></span>{{item.name}}</li>
+  </ul>
+</view>
